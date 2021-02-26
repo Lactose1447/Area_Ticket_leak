@@ -7,10 +7,10 @@ const color = JSON.parse(fs.readFileSync(`Storage/color.json`, `utf8`));
 exports.run = async (bot, message, args, functions) => {
 
 let channel = message.mentions.channels.first();
-if(!channel || channel.type !== "text") return functions.errorEmbed(message, message.channel, "Veuillez un salon texte.");
+if(!channel || channel.type !== "text") return functions.errorEmbed(message, message.channel, "Veuillez entré un salon texte.");
 
 let channelFetched = message.guild.channels.cache.find(c => c.id === channel.id);
-if(!channelFetched || channelFetched.type !== "text") return functions.errorEmbed(message, message.channel, "Veuillez un salon texte.");
+if(!channelFetched || channelFetched.type !== "text") return functions.errorEmbed(message, message.channel, "Veuillez entré un salon texte.");
 
 let embed = new Discord.MessageEmbed()
 .setAuthor(`✅ | Salon Définit`)
